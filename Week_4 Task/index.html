@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLearn - Online Courses</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+</head>
+<body>    
+    <header class="navbar" data-aos="fade-up" data-aos-delay="10">
+        <div class="logo-container">
+            <img src="logo.png" alt="EduLearn Logo" class="logo">
+            <span class="brand-name">EduLearn</span>
+            <style>
+                @import url('https://fonts.googleapis.com/css2?family=Plaster&display=swap');
+                </style>
+            </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Instructors</a></li>
+                <li><a href="#">Enroll</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+    <section class="explore-section"  data-aos="fade-up" data-aos-delay="100">
+        <h2 class="explore-heading">Explore Courses & Learn from Experts</h2>
+        <div class="stats-grid">
+            <div class="stat-box">
+                <img src="centres.png" alt="Coaching Centers">
+                <div class="stat-text-container">
+                    <span class="stat-number" id="coaching-centers">0</span>
+                    Coaching Centers
+                </div>
+            </div>
+            <div class="stat-box">
+                <img src="students.png" alt="Qualified Students">
+                <div class="stat-text-container">
+                    <span class="stat-number" id="qualified-students">0</span>
+                    Qualified Students
+                </div>
+            </div>
+            <div class="stat-box">
+                <img src="teachers.jpg" alt="Expert Faculty">
+                <div class="stat-text-container">
+                    <span class="stat-number" id="expert-faculty">0</span>
+                    Expert Faculty
+                </div>
+            </div>
+            <script>
+    
+            document.addEventListener("DOMContentLoaded", function () {
+                function animateValue(id, start, end, duration) {
+                    let obj = document.getElementById(id);
+                    let range = end - start;
+                    let startTime = new Date().getTime();
+                    let endTime = startTime + duration;
+                
+                    function update() {
+                        let now = new Date().getTime();
+                        let elapsed = now - startTime;
+                        let progress = Math.min(elapsed / duration, 1);
+                        let currentValue = Math.floor(start + range * progress);
+                        obj.textContent = currentValue.toLocaleString();
+                        if (progress < 1) {
+                            requestAnimationFrame(update);
+                        }
+                    }
+                
+                    update();
+                }
+            
+                animateValue("coaching-centers", 0, 300, 2000);  
+                animateValue("qualified-students", 0, 131700, 2500);  
+                animateValue("expert-faculty", 0, 5000, 2000); 
+            });
+        </script>
+                
+        </div>
+    </section>
+
+    <section id="courses" class="courses" data-aos="fade-up" data-aos-delay="200">
+        <h2>Featured Courses</h2>
+        <div class="courses-container">
+            <div class="course" style="background-image: url('webdevelopment.jpg');">
+                <p>Web Development</p>
+            </div>
+            <div class="course" style="background-image: url('datascience.jpg');">
+                <p>Data Science</p>
+            </div>
+            <div class="course" style="background-image: url('machinelearning.jpg');">
+                <p>Machine Learning</p>
+            </div>
+            <div class="course" style="background-image: url('cybersecurity.jpg');">
+                <p>Cybersecurity</p>
+            </div>
+            <div class="course" style="background-image: url('cloudcomputing.jpg');">
+                <p>Cloud Computing</p>
+            </div>
+            <div class="course" style="background-image: url('blockchain.jpg');">
+                <p>Blockchain</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="faculty-section" data-aos="fade-up" data-aos-delay="300">
+        <h2>Meet Our Expert Faculty</h2>
+        <br>
+        <br>
+        <div class="faculty-container">
+            <div class="faculty-card">
+                <img src="professor1.jpg" alt="Dr. John Doe">
+                <h3>Dr. Albert Einstein</h3>
+                <p>Ph.D. in AI & ML, 10+ years of experience in Deep Learning, Published 20+ research papers.</p>
+            </div>
+    
+            <div class="faculty-card">
+                <img src="professor2.jpg" alt="Dr. Jane Smith">
+                <h3>Dr. Nikola Tesla</h3>
+                <p>Cybersecurity Expert, 15+ years of industry experience, Consultant for Fortune 500 companies.</p>
+            </div>
+    
+            <div class="faculty-card">
+                <img src="professor3.jpg" alt="Prof. Emily Brown">
+                <h3>Prof. Alexander Graham Bell</h3>
+                <p>Data Science & Analytics Specialist, Published books on Big Data, Former Google AI Engineer.</p>
+            </div>
+        </div>
+    </section>
+    
+    <div class="enroll-section" data-aos="fade-up" data-aos-delay="400">
+        <br>
+        <br><br>
+        <h2>Enroll Now</h2>
+        <br>
+        <form class="enroll-form">
+            <input type="text" placeholder="Full Name">
+            <input type="email" placeholder="Email">
+            <select>
+                <option value="" disabled selected>Select Course</option>
+                <option value="web-dev">Web Development</option>
+                <option value="data-science">Data Science</option>
+                <option value="ai-ml">AI & Machine Learning</option>
+                <option value="cloud-computing">Cloud Computing</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+        <br>
+        
+        <br>
+        <br>
+        <br>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        easing: "ease-in-out", 
+        once: true 
+    });
+</script>
+
+</body>
+<footer>
+    <p>&copy; 2025 EduLearn. All rights reserved.</p>
+</footer>
+</html>
